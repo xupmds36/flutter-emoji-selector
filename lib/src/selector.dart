@@ -42,8 +42,8 @@ class _EmojiSelectorState extends State<EmojiSelector> {
     Category.smileys: Group(
       Category.smileys,
       CategoryIcons.smileyIcon,
-      'smileys & People',
-      ['smileys & Emotion', 'People & Body'],
+      'Smileys & People',
+      ['Smileys & Emotion', 'People & Body'],
     ),
     Category.animals: Group(
       Category.animals,
