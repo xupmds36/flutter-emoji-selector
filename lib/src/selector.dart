@@ -8,7 +8,7 @@ import 'package:emoji_selector/src/category_selector.dart';
 import 'package:emoji_selector/src/emoji_internal_data.dart';
 import 'package:emoji_selector/src/emoji_page.dart';
 import 'package:emoji_selector/src/group.dart';
-import 'package:emoji_selector/src/skin_tone_selector.dart';
+// import 'package:emoji_selector/src/skin_tone_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
@@ -207,27 +207,29 @@ class _EmojiSelectorState extends State<EmojiSelector> {
       );
       index += group.pages.length;
     }
-    selectors.add(
-      SkinToneSelector(onSkinChanged: (skin) {
-        setState(() {
-          _skin = skin;
-        });
-      }),
-    );
+    // selectors.add(
+    //   SkinToneSelector(onSkinChanged: (skin) {
+    //     setState(() {
+    //       _skin = skin;
+    //     });
+    //   }),
+    // );
 
     return Container(
       padding: widget.padding,
+      color: Color(0xFFE6E7EB),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 32.0,
+            height: 37.0,
             child: TextField(
               controller: _controller,
               onChanged: searchEmoji,
               cursorColor: Colors.grey,
-              style: TextStyle(fontSize: 12),
+              style: TextStyle(fontSize: 16),
               decoration: InputDecoration(
+                fillColor: Color(0xFFF2F2F7),
                 isDense: true,
                 contentPadding: EdgeInsets.zero,
                 filled: true,
@@ -235,10 +237,11 @@ class _EmojiSelectorState extends State<EmojiSelector> {
                     borderRadius: BorderRadius.circular(8),
                     borderSide: BorderSide.none),
                 hintText: 'Search Emoji',
-                hintStyle: TextStyle(color: Colors.grey, fontSize: 12),
+                hintStyle: TextStyle(
+                    color: Color(0xFF606060).withOpacity(0.6), fontSize: 16),
                 prefixIcon: Container(
                   child: Icon(Icons.search),
-                  width: 16,
+                  width: 22,
                 ),
               ),
             ),
@@ -247,7 +250,7 @@ class _EmojiSelectorState extends State<EmojiSelector> {
           if (widget.withTitle)
             Text(
               selectedGroup.title.toUpperCase(),
-              style: TextStyle(fontSize: 12),
+              style: TextStyle(fontSize: 12, color: Color(0xFF3C3C43)),
             ),
           SizedBox(
             width: MediaQuery.of(context).size.width,
@@ -326,7 +329,7 @@ class _EmojiSelectorState extends State<EmojiSelector> {
           if (_controller.text.isEmpty)
             SizedBox(
               /* Category PICKER */
-              height: 50,
+              // height: 50,
               child: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Row(

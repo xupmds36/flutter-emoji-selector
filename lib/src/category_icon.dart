@@ -7,8 +7,8 @@ class CategoryIcon {
 
   const CategoryIcon({
     required this.icon,
-    this.color = const Color.fromRGBO(211, 211, 211, 1),
-    this.selectedColor = const Color.fromRGBO(178, 178, 178, 1),
+    this.color = const Color.fromRGBO(117, 118, 119, 1),
+    this.selectedColor = const Color.fromRGBO(0, 0, 0, 1),
   });
 }
 
